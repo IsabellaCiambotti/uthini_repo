@@ -14,17 +14,11 @@ def read_data(filepathtr, filepathts):
     test = test['text_type'].tolist()
     return train, test
 
-def classify(train):
-    cl = NaiveBayesClassifier(train)
-    return cl
-
-def accuracy(cl, test):
-    acc = cl.accuracy(test)
-    return acc
+def classify(train,test):
+    classifier = NaiveBayesClassifier(train)
+    acc = classifier.accuracy(test)
     print(acc)
 
 if __name__ == "__main__":
     train, test = read_data('train_small.csv', 'labeled_output.csv')
-    format_data(train,test)
-    classify(train)
-    accuracy(cl,test)
+    classify(train, test)
