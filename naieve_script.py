@@ -4,8 +4,8 @@ import textblob
 from textblob.classifiers import NaiveBayesClassifier
 
 def read_data(filepathtr, filepathts):
-    train = pd.read_csv(filepathtr)
-    test = pd.read_csv(filepathts)
+    train = pd.read_csv(filepathtr, engine='python')
+    test = pd.read_csv(filepathts, engine='python')
     train.dropna(subset=['type'], inplace=True)
     train['text_type'] = tuple(zip(train['text'].astype(str), train['type'].astype(str)))
     train = train['text_type'].tolist()
