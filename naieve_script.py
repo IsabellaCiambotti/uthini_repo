@@ -24,7 +24,7 @@ def accuracy(cl, test):
     print(acc)
 
 if __name__ == "__main__":
-    train, test = read_data('train_small_.csv', 'test.csv')
+    train, test = read_data('train_small.csv', 'test.csv')
     format_data(train,test)
     classify(train)
     accuracy(cl,test)
